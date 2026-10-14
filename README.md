@@ -77,7 +77,7 @@ setup-macos.command        double-click wrapper
 ```
 
 ## CI and releases
-Every push validates `app.json`, `SKILL.md` and the scripts, then runs the setup scripts against a fake install on **Windows** and **macOS** runners. Pushing a tag `v*` builds `gridcraft-skill.zip` and publishes a GitHub release.
+Every push validates `app.json`, `SKILL.md` and the scripts, then runs the setup scripts against a fake install on **Windows** and **macOS** runners. Every push to `main` builds `gridcraft-skill.zip` and publishes (or updates) the GitHub release `v1.0.0`.
 
 ## Status and caveats
 - Windows paths and arguments come from a working install. The macOS paths (`/Applications/GridCraft.app`, CLI location and release asset name) follow the upstream packaging but have **not** been verified on a Mac; the skill marks unverified items and the setup script reports what it could not find.
