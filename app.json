@@ -1,0 +1,60 @@
+{
+  "id": "gridcraft",
+  "name": "GridCraft",
+  "tagline": "Excel-style spreadsheets (.xlsx)",
+  "upstream": "storytold/gridcraft",
+  "port": 7985,
+  "docsPort": 7979,
+  "launch": {
+    "args": [
+      "--control",
+      "{port}"
+    ]
+  },
+  "mcp": {
+    "server": "gridcraft",
+    "live": [
+      "mcp",
+      "--connect",
+      "{port}"
+    ],
+    "headless": [
+      "mcp"
+    ],
+    "default": "live"
+  },
+  "windows": {
+    "dirs": [
+      "{ProgramFiles}\\GridCraft",
+      "{LocalAppData}\\Programs\\GridCraft"
+    ],
+    "app": "gridcraft.exe",
+    "cli": "gridcraft-cli.exe"
+  },
+  "macos": {
+    "bundles": [
+      "/Applications/GridCraft.app",
+      "{home}/Applications/GridCraft.app"
+    ],
+    "appBinary": "Contents/MacOS/GridCraft",
+    "cliPaths": [
+      "{home}/.artcraft/bin/gridcraft-cli",
+      "/usr/local/bin/gridcraft-cli",
+      "/opt/homebrew/bin/gridcraft-cli",
+      "{bundle}/Contents/MacOS/gridcraft-cli"
+    ],
+    "cliReleaseAsset": "gridcraft-cli-{version}-macos-universal.zip",
+    "cliBinaryInZip": "gridcraft-cli"
+  },
+  "prepare": {
+    "dirs": []
+  },
+  "auth": {
+    "type": "none",
+    "notes": "Loopback only, no token."
+  },
+  "verified": {
+    "windows": true,
+    "macos": false
+  }
+}
